@@ -1,0 +1,468 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Instrument+Serif:ital@0;1&family=Kanit:ital,wght@0,400;1,300&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  font-family: "Amatic SC", cursive;
+  font-family: "Instrument Serif", serif;
+  font-family: "Kanit", sans-serif;
+  font-family: "Poppins", sans-serif;
+  margin: 0px;
+  padding: 0px;
+}
+// Colors
+$white: #f3f6f9;
+$black: #212121;
+$yellow: #ffd700;
+// AOS
+.fade-in {
+  opacity: 0;
+}
+
+.fade-in.aos-animate {
+  opacity: 1;
+}
+
+// -==--==--==--==--==- HOME START -==--==--==--==--==-
+.home-parent {
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 1) 20%,
+    rgba(28, 28, 28, 1) 100%
+  );
+  opacity: 0;
+  animation: fadeIn 0.5s 0.5s forwards;
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  .home-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .home-body {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 120px;
+  }
+}
+// -==--==--==--==--==- HOME END -==--==--==--==--==-
+// -==--==--==--==--==- APPBAR START -==--==--==--==--==-
+.appbar-parent {
+  position: fixed;
+  display: flex;
+  width: 100vw;
+  height: 120px;
+  background-color: #000000;
+  z-index: 10;
+  .appbar-logo {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 120px;
+    width: 23%;
+    svg {
+      color: $white;
+      font-size: 40px;
+      cursor: pointer;
+      transition: color 0.5s;
+      &:hover {
+        color: #b1b1b1;
+      }
+    }
+    a {
+      color: $white;
+      font-size: 40px;
+      font-weight: 700;
+      letter-spacing: 5px;
+      cursor: pointer;
+      color: $white;
+      text-decoration: none;
+    }
+  }
+  .appbar-menu-items {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 50%;
+    a {
+      font-size: 18px;
+      text-decoration: none;
+    }
+    button {
+      color: $white;
+      width: 120px;
+      position: relative;
+      transition: all 0.5s;
+      overflow: hidden;
+
+      &:hover::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 90%;
+        height: 0.5px;
+        background-color: $white;
+        transform: translateX(-50%);
+      }
+    }
+  }
+  .appbar-icons {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 30%;
+    svg {
+      color: $white;
+      font-size: 25px;
+    }
+  }
+}
+
+// -==--==--==--==--==- APPBAR END-==--==--==--==--==-
+// -==--==--==--==--==- HOME START-==--==--==--==--==-
+.home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  width: 80vw;
+  .home-center {
+    display: flex;
+    flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    width: 100%;
+    .home-shelf-a {
+      display: flex;
+      justify-content: center;
+      width: 80%;
+      margin-top: 100px;
+      .home-shelf-a-text {
+        position: relative;
+        .brand-name {
+          position: absolute;
+          top: 10px;
+          right: -0px;
+          font-size: 70px;
+          font-weight: 800;
+          text-transform: uppercase;
+          color: $white;
+        }
+        .brand-text {
+          position: absolute;
+          top: 150px;
+          right: -265px;
+          display: flex;
+          flex-direction: column;
+          & p {
+            font-size: 40px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: $white;
+          }
+          & span {
+            color: $yellow;
+            font-size: 40px;
+            font-weight: 800;
+            text-transform: uppercase;
+          }
+        }
+      }
+      & img {
+        height: 450px;
+        width: auto;
+        border-radius: 10px;
+        // margin-left: 0px;
+      }
+    }
+    .home-shelf-b {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      width: 70%;
+      margin-top: 150px;
+      & img {
+        height: 450px;
+        width: auto;
+        border-radius: 10px;
+        margin-left: 100px;
+      }
+      & p {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 40px;
+        font-weight: 800;
+        text-transform: uppercase;
+        color: $white;
+      }
+      & h4 {
+        position: absolute;
+        bottom: 10px;
+        right: 40px;
+        color: $yellow;
+        font-size: 40px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+      & span {
+        position: absolute;
+        top: 70px;
+        right: -145px;
+        color: $yellow;
+        font-size: 40px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+// -==--==--==--==--==- HOME END-==--==--==--==--==-
+// -==--==--==--==--==- CLOTHING START-==--==--==--==--==-
+.clothing-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80vw;
+  min-height: 80vh;
+  .clothing-title {
+    display: flex;
+    margin: 50px 0px 0px 10px;
+    .clothing-title-image {
+      position: relative;
+      z-index: 1;
+      width: 75%;
+      & img {
+        width: 100%;
+        object-fit: contain;
+        border-radius: 5px;
+        opacity: 0;
+        animation: fadeInAndDrift 0.8s 0.8s forwards;
+      }
+
+      @keyframes fadeInAndDrift {
+        from {
+          transform: translateX(-10%);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0%);
+        }
+      }
+      .clothing-title-text {
+        display: flex;
+        position: absolute;
+        top: 20%;
+        right: -310px;
+        width: max-content;
+        opacity: 0;
+        animation: fadeIn 1s 1s forwards;
+        @keyframes fadeIn {
+          to {
+            opacity: 1;
+          }
+        }
+        & p {
+          margin-left: 20px;
+          text-transform: uppercase;
+          width: 100%;
+          font-size: 50px;
+          font-weight: 800;
+          color: $white;
+          z-index: 2;
+        }
+      }
+    }
+  }
+  .clothing-products {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+  }
+  .products-title {
+    width: 100%;
+    margin-top: 200px;
+    background-image: url("https://images.unsplash.com/photo-1595065666634-4725aa7e8379?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzZ8fG1vZGVsJTIwYmxhY2t8ZW58MHwwfDB8fHww&auto=format&fit=crop&w=900&q=60");
+    object-fit: contain;
+    min-height: 500px;
+    & p {
+      font-size: 35px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-top: 50px;
+      text-align: center;
+      color: $white;
+      z-index: 12;
+    }
+    & span {
+      z-index: 12;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-left: 20px;
+      font-size: 40px;
+      font-weight: 800;
+      letter-spacing: 4px;
+      color: $yellow;
+    }
+  }
+  .products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+    margin-top: 100px;
+
+    .product-box {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      width: 300px;
+      height: 400px;
+      margin: 30px;
+      border-radius: 5px;
+      border: 0.5px solid $white;
+      & h1 {
+        font-weight: 300;
+        text-transform: uppercase;
+        color: $white;
+        font-size: 15px;
+        text-align: center;
+        width: 95%;
+        margin-top: 10px;
+      }
+      & h2 {
+        font-weight: 300;
+        text-transform: uppercase;
+        color: $white;
+        font-size: 10px;
+        text-align: justify;
+        width: 95%;
+        margin-top: 10px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+      }
+      & h3 {
+        font-weight: 300;
+        text-transform: uppercase;
+        color: $white;
+        font-size: 14px;
+        text-align: center;
+        width: 95%;
+        margin-top: 10px;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        & span {
+          font-weight: 700;
+          color: rgb(0, 218, 0);
+        }
+      }
+      & h4 {
+        font-weight: 400;
+        text-transform: uppercase;
+        color: $yellow;
+        font-size: 16px;
+        text-align: end;
+        width: 95%;
+        margin-top: 10px;
+      }
+      & img {
+        width: 100%;
+        height: 180px;
+        object-fit: contain;
+        background: white;
+      }
+    }
+  }
+}
+// -==--==--==--==--==- CLOTHING END-==--==--==--==--==-
+// -==--==--==--==--==- CONTACT START-==--==--==--==--==-
+.contact-parent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80vw;
+  opacity: 0;
+  animation: fadeIn 0.5s 1s forwards;
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
+  .contact-center {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    .contact-heading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-top: 70px;
+    }
+    .contact-form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 90%;
+    }
+    .contact-form form {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      min-height: 500px;
+      background: url("https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGNvbnRhY3R8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60");
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(
+          255,
+          255,
+          255,
+          0.7
+        ); /* Set the background overlay color */
+      }
+    }
+
+    .contact-form form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      background: url("https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGNvbnRhY3R8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60");
+      & button {
+        margin: 100px 0px 0px 0px;
+        background-color: $black;
+      }
+    }
+    .input-row {
+      display: flex;
+      justify-content: space-around;
+      width: 90%;
+      margin-top: 30px;
+      .input-row input {
+        box-sizing: border-box;
+        padding: 5px;
+        height: 30px;
+      }
+    }
+  }
+}
+
+// -==--==--==--==--==- CONTACT END-==--==--==--==--==-
