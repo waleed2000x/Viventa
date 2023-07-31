@@ -6,11 +6,21 @@
   font-family: "Poppins", sans-serif;
   margin: 0px;
   padding: 0px;
+  .no-scroll {
+    overflow: hidden;
+  }
+}
+body {
+  position: relative;
 }
 // Colors
 $white: #f3f6f9;
-$black: #212121;
+$lightBlack: #212121;
+$jetBlack: #000000;
 $yellow: #ffd700;
+$green: rgb(0, 218, 0);
+$blue: rgb(0, 132, 255);
+$pink: #ff6f61;
 // AOS
 .fade-in {
   opacity: 0;
@@ -29,7 +39,7 @@ $yellow: #ffd700;
   background: linear-gradient(
     180deg,
     rgba(0, 0, 0, 1) 20%,
-    rgba(28, 28, 28, 1) 100%
+    rgb(20, 20, 20) 100%
   );
   opacity: 0;
   animation: fadeIn 0.5s 0.5s forwards;
@@ -58,7 +68,7 @@ $yellow: #ffd700;
   width: 100vw;
   height: 120px;
   background-color: #000000;
-  z-index: 10;
+  z-index: 3;
   .appbar-logo {
     display: flex;
     justify-content: space-evenly;
@@ -221,7 +231,87 @@ $yellow: #ffd700;
       }
     }
   }
+  .home-shelf-c {
+    display: flex;
+    justify-content: flex-end;
+    width: 80%;
+    margin-top: 150px;
+    & img {
+      position: relative;
+      height: 450px;
+      width: auto;
+      border-radius: 10px;
+    }
+    & p {
+      position: absolute;
+      top: 10px;
+      left: 150px;
+      font-size: 35px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: $white;
+    }
+    & span {
+      position: absolute;
+      top: 50px;
+      left: 440px;
+      color: $yellow;
+      font-size: 40px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    & h4 {
+      position: absolute;
+      bottom: 5px;
+      right: 15px;
+      color: $yellow;
+      font-size: 40px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+  }
+  .home-shelf-d {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 70%;
+    margin: 150px 0px;
+    & img {
+      height: 450px;
+      width: auto;
+      border-radius: 10px;
+      margin-left: 100px;
+    }
+    & p {
+      position: absolute;
+      top: 20px;
+      right: 100px;
+      font-size: 40px;
+      font-weight: 800;
+      text-transform: uppercase;
+      color: $white;
+    }
+    & span {
+      position: absolute;
+      top: 70px;
+      right: -165px;
+      color: $yellow;
+      font-size: 40px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    & h4 {
+      position: absolute;
+      bottom: 10px;
+      right: 40px;
+      color: $yellow;
+      font-size: 40px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+  }
 }
+
 // -==--==--==--==--==- HOME END-==--==--==--==--==-
 // -==--==--==--==--==- CLOTHING START-==--==--==--==--==-
 .clothing-parent {
@@ -305,7 +395,7 @@ $yellow: #ffd700;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      margin-left: 20px;
+      margin-right: 50px;
       font-size: 40px;
       font-weight: 800;
       letter-spacing: 4px;
@@ -362,7 +452,7 @@ $yellow: #ffd700;
         text-overflow: ellipsis;
         & span {
           font-weight: 700;
-          color: rgb(0, 218, 0);
+          color: $green;
         }
       }
       & h4 {
@@ -383,7 +473,123 @@ $yellow: #ffd700;
     }
   }
 }
+
 // -==--==--==--==--==- CLOTHING END-==--==--==--==--==-
+// -==--==--==--==--==- PRODUCT MODAL START-==--==--==--==--==-
+.product-modal-parent {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  transform: translate(-50% -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 4;
+  .modal {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 600px;
+    width: 40%;
+    border: 0.5px solid $yellow;
+    background-color: $jetBlack;
+    border-radius: 5px;
+  }
+  .product-modal-close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin: 10px 10px 0px 0px;
+    // width: 98%;
+    & > * {
+      font-size: 40px;
+      color: $yellow;
+    }
+  }
+  .modal-image {
+    position: absolute;
+    top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    overflow: hidden;
+    border: 3px solid $yellow;
+    & img {
+      object-fit: contain;
+      height: 90%;
+      width: auto;
+    }
+  }
+  .modal-details {
+    margin-top: 330px;
+    width: 80%;
+    & h1 {
+      color: $white;
+      // font-size: 20px;
+      width: 100%;
+      text-transform: uppercase;
+      color: $yellow;
+      font-size: 18px;
+      text-align: center;
+    }
+    & h2 {
+      color: $white;
+      font-size: 14px;
+      width: 100%;
+      text-align: justify;
+      height: 150px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    & h3 {
+      position: absolute;
+      top: 5px;
+      left: 10px;
+      color: $white;
+      font-size: 14px;
+      max-width: 50%;
+      text-transform: uppercase;
+      & span {
+        margin-left: 5px;
+        text-decoration: underline;
+      }
+    }
+    & h4 {
+      position: absolute;
+      bottom: 10px;
+      right: 15px;
+      color: $white;
+      font-size: 20px;
+      max-width: 50%;
+      text-transform: uppercase;
+      width: 100%;
+      text-align: end;
+      color: $green;
+    }
+    & button {
+      position: absolute;
+      left: 10px;
+      bottom: 5px;
+      width: 70px;
+      height: 50px;
+      border-radius: 10px;
+      color: $blue;
+      & svg {
+        color: $yellow;
+        font-size: 40px;
+      }
+    }
+  }
+}
+// -==--==--==--==--==- PRODUCT MODAL END-==--==--==--==--==-
 // -==--==--==--==--==- CONTACT START-==--==--==--==--==-
 .contact-parent {
   display: flex;
@@ -448,7 +654,7 @@ $yellow: #ffd700;
       background: url("https://images.unsplash.com/photo-1487017159836-4e23ece2e4cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fGNvbnRhY3R8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=900&q=60");
       & button {
         margin: 100px 0px 0px 0px;
-        background-color: $black;
+        background-color: $lightBlack;
       }
     }
     .input-row {
@@ -466,3 +672,68 @@ $yellow: #ffd700;
 }
 
 // -==--==--==--==--==- CONTACT END-==--==--==--==--==-
+// -==--==--==--==--==- FOOTER START-==--==--==--==--==-
+.footer-parent {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+  height: 20vh;
+  background-color: $jetBlack;
+  .footer-center {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      width: 30%;
+      a {
+        color: $white;
+        font-size: 40px;
+        font-weight: 700;
+        letter-spacing: 5px;
+        cursor: pointer;
+        color: $white;
+        text-decoration: none;
+      }
+    }
+    .rights-reserved {
+      display: flex;
+      height: 100%;
+      align-items: flex-end;
+      width: 40%;
+      & p {
+        width: 100%;
+        text-align: center;
+        font-size: 15px;
+        color: $white;
+        font-weight: 200;
+      }
+      & span {
+        color: $yellow;
+        font-weight: 400;
+      }
+    }
+    .footer-logos {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      width: 30%;
+      height: 100%;
+      & img {
+        width: 25px;
+        height: auto;
+      }
+    }
+    .footer-line {
+      position: absolute;
+      bottom: 30px;
+      border-bottom: 0.5px solid $white;
+      width: 90%;
+    }
+  }
+}
+// -==--==--==--==--==- FOOTER END-==--==--==--==--==-

@@ -1,7 +1,24 @@
 import { useEffect, useState } from "react";
+import ProductModal from "./ProductModal";
 
 export default function Clothing() {
+  const [modal, showModal] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState([]);
   const [products, setProducts] = useState([]);
+  const [modalProduct, setModalProduct] = useState([]);
+
+  const handleProductClick = (product) => {
+    setModalProduct(product);
+    setSelectedProduct((prev) => [...prev, product]);
+  };
+  // console.log(modalProduct);
+  // console.log("this one👆🏻");
+  // console.log(selectedProduct);
+  useEffect(() => {
+    modal
+      ? document.body.classList.add("no-scroll")
+      : document.body.classList.remove("no-scroll");
+  }, [modal]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,35 +33,6 @@ export default function Clothing() {
 
     fetchData();
   }, []);
-
-  // useEffect(() => {
-  //   const fetchFashionData = async () => {
-  //     const url = "https://fashion4.p.rapidapi.com/v1/results";
-  //     const options = {
-  //       method: "POST",
-  //       headers: {
-  //         "content-type": "application/x-www-form-urlencoded",
-  //         "X-RapidAPI-Key":
-  //           "71975b8f84msh6323a943c892d74p131c78jsn8329e63af469",
-  //         "X-RapidAPI-Host": "fashion4.p.rapidapi.com",
-  //       },
-  //       body: new URLSearchParams({
-  //         url: "https://storage.googleapis.com/api4ai-static/samples/fashion-1.jpg",
-  //       }),
-  //     };
-
-  //     try {
-  //       const response = await fetch(url, options);
-  //       const data = await response.json();
-  //       setProducts(data);
-  //     } catch (error) {
-  //       console.error(error);
-  //     }
-  //   };
-
-  //   fetchFashionData();
-  // }, []);
-  console.log(products);
   return (
     <div className="clothing-parent">
       <div className="clothing-title">
@@ -73,7 +61,14 @@ export default function Clothing() {
           {products.length > 0
             ? products.map((item) =>
                 item.category !== "electronics" ? (
-                  <div className="product-box" key={item.id}>
+                  <div
+                    onClick={() => {
+                      showModal(!modal);
+                      handleProductClick(item);
+                    }}
+                    className="product-box"
+                    key={item.id}
+                  >
                     <img src={item.image} alt={item.title}></img>
                     <h1>{item.title}</h1>
                     <h2>{item.description}</h2>
@@ -89,6 +84,13 @@ export default function Clothing() {
             : null}
         </div>
       </div>
+      {modal ? (
+        <ProductModal
+          modalProduct={modalProduct}
+          modal={modal}
+          showModal={showModal}
+        />
+      ) : null}
     </div>
   );
 }

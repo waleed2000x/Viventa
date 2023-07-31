@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Appbar from "../Appbar/Appbar";
 import Sidebar from "../Sidebar/Sidebar";
 import { Outlet, useLocation } from "react-router-dom";
+import Footer from "../footer/Footer";
 
 export default function Home() {
   const [sidebar, setSidebar] = useState(true);
@@ -28,6 +29,7 @@ export default function Home() {
           <Sidebar sidebar={sidebar} />
           <Outlet />
         </div>
+        <Footer />
       </div>
     </div>
   );
