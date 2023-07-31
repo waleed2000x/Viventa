@@ -1,8 +1,7 @@
-/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import { Button } from "@mui/material";
 import React, { useState } from "react";
-
+import DeleteTwoToneIcon from "@mui/icons-material/DeleteTwoTone";
 export default function ShoppingCart({ cartProducts, setCartProducts }) {
   const [prices, setPrices] = useState(
     cartProducts.map((amount) => amount.price)
@@ -17,10 +16,27 @@ export default function ShoppingCart({ cartProducts, setCartProducts }) {
     setTotalPrice(0);
     prices.length > 0 ? alert("Order Placed") : null;
   };
+
+  const handleDeleteItem = (itemId) => {
+    setCartProducts(cartProducts.filter((item) => item.id !== itemId));
+
+    const updatedPrices = prices.filter(
+      (price, index) => cartProducts[index].id !== itemId
+    );
+    setPrices(updatedPrices);
+    const updatedTotalPrice = updatedPrices.reduce(
+      (accumulator, currentValue) => accumulator + currentValue,
+      0
+    );
+    setTotalPrice(updatedTotalPrice);
+  };
+
   const handleDelete = () => {
     setTotalPrice(0);
+    setPrices([]);
     setCartProducts([]);
   };
+
   return (
     <div className="shopping-cart-parent">
       <div className="shopping-cart-title">
@@ -43,7 +59,7 @@ export default function ShoppingCart({ cartProducts, setCartProducts }) {
                 }}
               >
                 <div className="shopping-cart-item">
-                  <img src={product.image} />
+                  <img src={product.image} alt="Product" />
                   <div className="cart-details">
                     <h1 className="cart-product-title">{product.title}</h1>
                     <h2 className="cart-product-description">
@@ -58,6 +74,13 @@ export default function ShoppingCart({ cartProducts, setCartProducts }) {
                       </p>
                     </div>
                     <h3 className="cart-product-price">$ {product.price}</h3>
+                    <Button
+                      variant="contained"
+                      color="error"
+                      onClick={() => handleDeleteItem(product.id)}
+                    >
+                      <DeleteTwoToneIcon />
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -73,7 +96,7 @@ export default function ShoppingCart({ cartProducts, setCartProducts }) {
           <div className="cart-checkout-buttons">
             <Button
               variant="contained"
-              color="success"
+              className="checkout"
               onClick={handleCheckout}
             >
               Check Out

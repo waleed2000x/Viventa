@@ -733,6 +733,12 @@ body {
   color: rgb(0, 218, 0);
   font-weight: 600;
 }
+.shopping-cart-parent .shopping-cart-items .shopping-cart-item .cart-details button {
+  width: -moz-fit-content;
+  width: fit-content;
+  align-self: flex-end;
+  margin: 10px 20px 10px 0px;
+}
 .shopping-cart-parent .shopping-cart-items .shopping-cart-item .cart-details .cart-sold-rating {
   display: flex;
   justify-content: space-between;
@@ -770,10 +776,10 @@ body {
   width: 25vw;
   justify-content: space-between;
 }
-.shopping-cart-parent .cart-checkout-parent .cart-checkout .cart-checkout-buttons button {
+.shopping-cart-parent .cart-checkout-parent .cart-checkout .cart-checkout-buttons .checkout {
   color: black;
+  background-color: rgb(0, 218, 0);
   font-size: 16px;
-  font-weight: 800;
   height: 40px;
   width: 150px;
 }
