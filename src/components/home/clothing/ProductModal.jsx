@@ -2,10 +2,15 @@
 import CancelOutlinedIcon from "@mui/icons-material/CancelOutlined";
 import { IconButton } from "@mui/material";
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
-export default function ProductModal({ modal, showModal, modalProduct }) {
-  //   console.log(modalProduct);
+
+export default function ProductModal({
+  modal,
+  showModal,
+  modalProduct,
+  setCartProducts,
+}) {
   return (
-    <div className="product-modal-parent">
+    <div className="product-modal-parent" onClick={() => showModal(false)}>
       <div className="modal" data-aos="fade-down" data-aos-duration="1500">
         <div className="product-modal-close" onClick={() => showModal(!modal)}>
           <CancelOutlinedIcon />
@@ -42,7 +47,11 @@ export default function ProductModal({ modal, showModal, modalProduct }) {
           <h4 data-aos="zoom-in" data-aos-duration="2000">
             Price: ${modalProduct.price}
           </h4>
-          <IconButton>
+          <IconButton
+            onClick={() =>
+              setCartProducts((prevVal) => [...prevVal, modalProduct])
+            }
+          >
             <AddShoppingCartOutlinedIcon />
           </IconButton>
         </div>

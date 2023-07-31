@@ -1,19 +1,19 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import ProductModal from "./ProductModal";
 
-export default function Clothing() {
+export default function Clothing({ setCartProducts }) {
   const [modal, showModal] = useState(false);
-  const [selectedProduct, setSelectedProduct] = useState([]);
-  const [products, setProducts] = useState([]);
-  const [modalProduct, setModalProduct] = useState([]);
+  const [selectedProduct, setSelectedProduct] = useState([]); //selected for the shoppingCart
+  const [products, setProducts] = useState([]); //all products form API
+  const [modalProduct, setModalProduct] = useState([]); //Data sender to the modal
 
   const handleProductClick = (product) => {
     setModalProduct(product);
     setSelectedProduct((prev) => [...prev, product]);
   };
-  // console.log(modalProduct);
-  // console.log("this one👆🏻");
-  // console.log(selectedProduct);
+
   useEffect(() => {
     modal
       ? document.body.classList.add("no-scroll")
@@ -71,12 +71,6 @@ export default function Clothing() {
                   >
                     <img src={item.image} alt={item.title}></img>
                     <h1>{item.title}</h1>
-                    <h2>{item.description}</h2>
-                    <h1>{item.category}</h1>
-                    <h3>Sold: {item.rating.count}</h3>
-                    <h3>
-                      Rating: <span>{item.rating.rate}</span>
-                    </h3>
                     <h4>Price: ${item.price}</h4>
                   </div>
                 ) : null
@@ -86,6 +80,7 @@ export default function Clothing() {
       </div>
       {modal ? (
         <ProductModal
+          setCartProducts={setCartProducts}
           modalProduct={modalProduct}
           modal={modal}
           showModal={showModal}

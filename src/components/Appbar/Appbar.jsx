@@ -6,14 +6,9 @@ import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
-import { useEffect } from "react";
 // import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 
-export default function Appbar({ sidebar, setSidebar }) {
-  useEffect(() => {
-    console.log(sidebar);
-  }, [sidebar]);
-
+export default function Appbar({ sidebar, setSidebar, cartProducts }) {
   return (
     <div className="appbar-parent">
       <div className="appbar-logo">
@@ -49,12 +44,16 @@ export default function Appbar({ sidebar, setSidebar }) {
         </NavLink>
       </div>
       <div className="appbar-icons">
-        <IconButton color="info">
+        {/* <IconButton color="info">
           <SearchRoundedIcon />
-        </IconButton>
-        <IconButton color="info">
-          <ShoppingCartOutlinedIcon />
-        </IconButton>
+        </IconButton> */}
+        <Badge badgeContent={cartProducts.length} color="error">
+          <NavLink to="/shoppingcart">
+            <IconButton color="info">
+              <ShoppingCartOutlinedIcon />
+            </IconButton>
+          </NavLink>
+        </Badge>
         <IconButton color="info">
           <FavoriteRoundedIcon />
         </IconButton>

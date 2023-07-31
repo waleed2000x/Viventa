@@ -1,10 +1,11 @@
+/* eslint-disable react/prop-types */
 import { useState, useEffect } from "react";
 import Appbar from "../Appbar/Appbar";
 import Sidebar from "../Sidebar/Sidebar";
 import { Outlet, useLocation } from "react-router-dom";
 import Footer from "../footer/Footer";
 
-export default function Home() {
+export default function Home({ cartProducts }) {
   const [sidebar, setSidebar] = useState(true);
   const location = useLocation();
 
@@ -24,7 +25,11 @@ export default function Home() {
   return (
     <div className="home-parent">
       <div className="home-container">
-        <Appbar sidebar={sidebar} setSidebar={setSidebar} />
+        <Appbar
+          sidebar={sidebar}
+          setSidebar={setSidebar}
+          cartProducts={cartProducts}
+        />
         <div className="home-body">
           <Sidebar sidebar={sidebar} />
           <Outlet />

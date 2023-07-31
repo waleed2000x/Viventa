@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { Button } from "@mui/material";
-import { NavLink } from "react-router-dom";
 import styled, { keyframes } from "styled-components";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 
@@ -42,7 +41,6 @@ const Inner = styled.div`
   justify-content: space-evenly;
   width: 100%;
   height: 100%;
-  /* margin: 120px 0px; */
 
   border-right: 0.5px solid #f3f6f9;
 `;
@@ -55,43 +53,31 @@ const Buttons = styled.div`
     width: 100%;
     color: #ffffff;
     height: 80px;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    color: #f3f6f9;
     &:hover {
-      /* background: none; */
-    }
-    a {
-      font-weight: 600;
-      font-size: larger;
-      text-align: justify;
-      text-transform: uppercase;
-      color: #f3f6f9;
-      text-decoration: none;
-      &:hover {
-        color: #b1b1b1;
-      }
+      color: #b1b1b1;
     }
   }
 `;
 
 export default function Sidebar({ sidebar }) {
   const toggleSidebar = sidebar ? "show" : "hide";
+
   return (
     <Parent>
       <Container show={toggleSidebar}>
         <Inner>
           <Buttons>
-            <Button variant="text">
-              <NavLink>Mens</NavLink>
-            </Button>
+            <Button variant="text">Mens</Button>
           </Buttons>
           <Buttons>
-            <Button>
-              <NavLink>Women</NavLink>
-            </Button>
+            <Button>Women</Button>
           </Buttons>
           <Buttons>
-            <Button>
-              <NavLink>Kids</NavLink>
-            </Button>
+            <Button>Kids</Button>
           </Buttons>
           <Buttons>
             <Button
