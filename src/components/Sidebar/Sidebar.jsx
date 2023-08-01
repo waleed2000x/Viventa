@@ -2,6 +2,7 @@
 import { Button } from "@mui/material";
 import styled, { keyframes } from "styled-components";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
+import { NavLink } from "react-router-dom";
 
 const fadeInAnimation = keyframes`
     from {
@@ -53,10 +54,13 @@ const Buttons = styled.div`
     width: 100%;
     color: #ffffff;
     height: 80px;
-    font-weight: 600;
-    font-size: 16px;
-    text-transform: uppercase;
-    color: #f3f6f9;
+    a {
+      font-weight: 600;
+      font-size: 16px;
+      text-transform: uppercase;
+      color: #f3f6f9;
+      text-decoration: none;
+    }
     &:hover {
       color: #b1b1b1;
     }
@@ -71,13 +75,19 @@ export default function Sidebar({ sidebar }) {
       <Container show={toggleSidebar}>
         <Inner>
           <Buttons>
-            <Button variant="text">Mens</Button>
+            <Button>
+              <NavLink to="/">Home</NavLink>
+            </Button>
           </Buttons>
           <Buttons>
-            <Button>Women</Button>
+            <Button>
+              <NavLink to="/clothing">Shop</NavLink>
+            </Button>
           </Buttons>
           <Buttons>
-            <Button>Kids</Button>
+            <Button>
+              <NavLink to="/shoppingcart">Cart</NavLink>
+            </Button>
           </Buttons>
           <Buttons>
             <Button

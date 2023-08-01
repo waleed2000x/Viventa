@@ -31,7 +31,6 @@ export default function Contact() {
       resetForm();
     },
   });
-  // console.log(errors.contact);
   const inputRef = createRef();
 
   useEffect(() => {
@@ -109,7 +108,6 @@ export default function Contact() {
                   width: "40%",
                 }}
                 required
-                // prefix="+"
                 InputProps={{
                   startAdornment: (
                     <InputAdornment position="start">(+92)</InputAdornment>

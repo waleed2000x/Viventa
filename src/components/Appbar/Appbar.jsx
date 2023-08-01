@@ -2,13 +2,12 @@
 import { Badge, Button, IconButton } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import TableRowsRoundedIcon from "@mui/icons-material/TableRowsRounded";
-import SearchRoundedIcon from "@mui/icons-material/SearchRounded";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
-// import KeyboardArrowDownOutlinedIcon from "@mui/icons-material/KeyboardArrowDownOutlined";
 
 export default function Appbar({ sidebar, setSidebar, cartProducts }) {
+
   return (
     <div className="appbar-parent">
       <div className="appbar-logo">
@@ -32,14 +31,14 @@ export default function Appbar({ sidebar, setSidebar, cartProducts }) {
             Clothing
           </Button>
         </NavLink>
-        <NavLink to="/">
-          <Button variant="text" size="large">
-            Blod
-          </Button>
-        </NavLink>
         <NavLink to="/contact">
           <Button variant="text" size="large">
             Contact
+          </Button>
+        </NavLink>
+        <NavLink to="/about">
+          <Button variant="text" size="large">
+            About
           </Button>
         </NavLink>
       </div>
@@ -57,10 +56,12 @@ export default function Appbar({ sidebar, setSidebar, cartProducts }) {
         <IconButton color="info">
           <FavoriteRoundedIcon />
         </IconButton>
-        <Badge badgeContent={1} color="error">
+        <Badge badgeContent={0} color="error">
+          <NavLink to="/profile">
           <IconButton color="info">
             <PersonIcon />
           </IconButton>
+          </NavLink>
         </Badge>
       </div>
     </div>

@@ -4,7 +4,9 @@ import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import "aos/dist/aos.css"; // Import the AOS CSS file
 import AOS from "aos";
-AOS.init();
+AOS.init({
+  duration:'1200'
+});
 ReactDOM.createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <App />

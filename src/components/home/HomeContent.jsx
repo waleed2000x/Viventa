@@ -1,3 +1,6 @@
+import { Button } from "@mui/material";
+import { NavLink } from "react-router-dom";
+
 export default function HomeContent() {
   return (
     <div className="home-content">
@@ -15,6 +18,9 @@ export default function HomeContent() {
               <p>Infinite Elegance</p>
               <span> Infinite Confidence</span>
             </div>
+            <NavLink to='/clothing'>
+        <Button>Shop Now</Button>
+        </NavLink>
           </div>
         </div>
         <div

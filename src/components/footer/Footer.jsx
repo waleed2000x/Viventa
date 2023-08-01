@@ -5,6 +5,8 @@ import Twitter from "../../assets/images/Twitter.svg";
 import Github from "../../assets/images/Github.svg";
 import LinkedIn from "../../assets/images/LinkedIn.svg";
 export default function Footer() {
+  const date = new Date();
+  const year = date.getFullYear();
   return (
     <div className="footer-parent">
       <div className="footer-center">
@@ -17,7 +19,7 @@ export default function Footer() {
           data-aos-duration="2000"
         >
           <p>
-            <span>Copyright ©</span> All rights Reserved
+            <span>Copyright © {year}</span> All rights Reserved
           </p>
         </div>
         <div

@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import { Button } from "@mui/material";
-import React, { useState } from "react";
+import { useState } from "react";
 import DeleteTwoToneIcon from "@mui/icons-material/DeleteTwoTone";
 export default function ShoppingCart({ cartProducts, setCartProducts }) {
   const [prices, setPrices] = useState(
@@ -9,12 +9,14 @@ export default function ShoppingCart({ cartProducts, setCartProducts }) {
   const [totalPrice, setTotalPrice] = useState(
     prices.reduce((accumulator, currentValue) => accumulator + currentValue, 0)
   );
-  console.log(cartProducts.length <= 0 ? "Empty" : cartProducts[0].title);
 
   const handleCheckout = () => {
-    setPrices([]);
-    setTotalPrice(0);
-    prices.length > 0 ? alert("Order Placed") : null;
+    if (prices.length > 0) {
+      alert("Order Placed");
+      setTotalPrice(0);
+      setPrices([]);
+      setCartProducts([]);
+    }
   };
 
   const handleDeleteItem = (itemId) => {
@@ -32,13 +34,20 @@ export default function ShoppingCart({ cartProducts, setCartProducts }) {
   };
 
   const handleDelete = () => {
-    setTotalPrice(0);
-    setPrices([]);
-    setCartProducts([]);
+    const ask = confirm("Confirm deletion of all items in the shopping cart.");
+    if (ask) {
+      setTotalPrice(0);
+      setPrices([]);
+      setCartProducts([]);
+    }
   };
 
   return (
-    <div className="shopping-cart-parent">
+    <div
+      className="shopping-cart-parent"
+      data-aos="fade-in"
+      data-aos-duration="1000"
+    >
       <div className="shopping-cart-title">
         <p>
           Where Fashion Meets <span>Convenience</span>
@@ -51,6 +60,8 @@ export default function ShoppingCart({ cartProducts, setCartProducts }) {
           {cartProducts.map((product) => {
             return (
               <div
+                data-aos="fade-in"
+                data-aos-duration="2000"
                 key={product.id}
                 style={{
                   display: "flex",
@@ -91,7 +102,7 @@ export default function ShoppingCart({ cartProducts, setCartProducts }) {
       <div className="cart-checkout-parent">
         <div className="cart-checkout">
           <p>
-            TOTAL: <span> ${totalPrice}</span>
+            TOTAL: <span> ${totalPrice.toFixed(3)}</span>
           </p>
           <div className="cart-checkout-buttons">
             <Button
