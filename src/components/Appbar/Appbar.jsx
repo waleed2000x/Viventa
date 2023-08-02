@@ -4,10 +4,15 @@ import { NavLink } from "react-router-dom";
 import TableRowsRoundedIcon from "@mui/icons-material/TableRowsRounded";
 import PersonIcon from "@mui/icons-material/Person";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
+// import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
+import { UserContext } from "../../context/userContext";
+import { useContext } from "react";
 
 export default function Appbar({ sidebar, setSidebar, cartProducts }) {
-
+  const { user } = useContext(UserContext);
+  let username = user.name || "";
+  let userName = username.split(" ");
+  // console.log(userName);
   return (
     <div className="appbar-parent">
       <div className="appbar-logo">
@@ -43,9 +48,6 @@ export default function Appbar({ sidebar, setSidebar, cartProducts }) {
         </NavLink>
       </div>
       <div className="appbar-icons">
-        {/* <IconButton color="info">
-          <SearchRoundedIcon />
-        </IconButton> */}
         <Badge badgeContent={cartProducts.length} color="error">
           <NavLink to="/shoppingcart">
             <IconButton color="info">
@@ -53,16 +55,17 @@ export default function Appbar({ sidebar, setSidebar, cartProducts }) {
             </IconButton>
           </NavLink>
         </Badge>
-        <IconButton color="info">
-          <FavoriteRoundedIcon />
-        </IconButton>
         <Badge badgeContent={0} color="error">
           <NavLink to="/profile">
-          <IconButton color="info">
-            <PersonIcon />
-          </IconButton>
+            <IconButton color="info">
+              <PersonIcon />
+            </IconButton>
           </NavLink>
         </Badge>
+        <IconButton color="secondary">
+          {/* <FavoriteRoundedIcon /> */}
+          <p style={{ fontSize: "18px" }}>{userName[0]}</p>
+        </IconButton>
       </div>
     </div>
   );

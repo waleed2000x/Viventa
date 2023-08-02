@@ -23,8 +23,8 @@ $blue: rgb(0, 132, 255);
 $lightBlue: rgb(180, 217, 252);
 $pink: #ff6f61;
 $orange: #ff6600;
-$lightGrey:#d7d7d7;
-$grey:#b1b1b1;
+$lightGrey: #d7d7d7;
+$grey: #b1b1b1;
 // MIXINS
 // BUTTON SHOP NOW
 @mixin blackYellowButton {
@@ -35,7 +35,7 @@ $grey:#b1b1b1;
   text-align: center;
   text-decoration: none;
   color: $jetBlack;
-  background-color: $yellow; 
+  background-color: $yellow;
   border: 2px solid #000000;
   border-radius: 4px;
   transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
@@ -210,18 +210,20 @@ $grey:#b1b1b1;
           position: absolute;
           bottom: 20px;
           left: 50%;
-          transform: translateX(-50%); /* This centers the anchor horizontally */
+          transform: translateX(
+            -50%
+          ); /* This centers the anchor horizontally */
           & button {
             @include blackYellowButton;
           }
+        }
+        & img {
+          height: 450px;
+          width: auto;
+          border-radius: 10px;
+          // margin-left: 0px;
+        }
       }
-      & img {
-        height: 450px;
-        width: auto;
-        border-radius: 10px;
-        // margin-left: 0px;
-      }
-    }
     }
     .home-shelf-b {
       position: relative;
@@ -703,13 +705,13 @@ $grey:#b1b1b1;
 
 // -==--==--==--==--==- CONTACT END-==--==--==--==--==-
 // -==--==--==--==--==- ABOUT START-==--==--==--==--==-
-.about-parent{
+.about-parent {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 80vw;
   min-height: 100vh;
-  .about-viventa-title{
+  .about-viventa-title {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -743,17 +745,17 @@ $grey:#b1b1b1;
       position: absolute;
       bottom: 40px;
       & button {
-        @include blackYellowButton
+        @include blackYellowButton;
       }
     }
   }
-  .about-viventa{
+  .about-viventa {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 80%;
     margin: 50px 0px;
-    & h1{
+    & h1 {
       color: $yellow;
       font-size: 30px;
       font-weight: 300;
@@ -785,8 +787,15 @@ $grey:#b1b1b1;
     justify-content: center;
     align-items: center;
     min-height: 30vh;
-    color: rgb(119, 119, 119);
-    font-weight: 500;
+    & p {
+      font-size: 18px;
+      font-weight: 500;
+      color: $orange;
+      margin-right: 20px;
+    }
+    & button {
+      @include blackYellowButton;
+    }
   }
   .shopping-cart-title {
     display: flex;
@@ -900,8 +909,6 @@ $grey:#b1b1b1;
         width: 25vw;
         justify-content: space-between;
         .checkout {
-          color: black;
-          background-color: $green;
           font-size: 16px;
           height: 40px;
           width: 150px;
@@ -912,12 +919,12 @@ $grey:#b1b1b1;
 }
 // -==--==--==--==--==- SHOPPING CART END-==--==--==--==--==-
 // -==--==--==--==--==- PROFILE START-==--==--==--==--==-
-.profile-parent{
+.profile-parent {
   display: flex;
   flex-direction: column;
   width: 80vw;
   min-height: 80vh;
-  .profile-title{
+  .profile-title {
     position: relative;
     display: flex;
     justify-content: center;
@@ -927,24 +934,24 @@ $grey:#b1b1b1;
       opacity: 0.5;
       border-radius: 10px;
     }
-    & h1{
+    & h1 {
       position: absolute;
       top: 20px;
       font-size: 30px;
       color: $white;
       z-index: 1;
-      & span{
+      & span {
         color: $yellow;
       }
     }
   }
-  .profile-details{
+  .profile-details {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     margin: 80px 0px 50px 0px;
-    & h1{
+    & h1 {
       font-size: 25px;
       color: $white;
       text-transform: uppercase;
@@ -952,7 +959,7 @@ $grey:#b1b1b1;
         color: $orange;
       }
     }
-    .profile-inputs-enabled{
+    .profile-inputs-enabled {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -970,14 +977,14 @@ $grey:#b1b1b1;
           color: $white;
           width: 300px;
           height: 15px;
-          border-top-left-radius: 5px ;
-          border-top-right-radius: 5px ;
+          border-top-left-radius: 5px;
+          border-top-right-radius: 5px;
           border: 2px solid $orange;
           background-color: $jetBlack;
         }
       }
     }
-    .profile-inputs-disabled{
+    .profile-inputs-disabled {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -999,12 +1006,12 @@ $grey:#b1b1b1;
       }
     }
   }
-  .profile-buttons{
+  .profile-buttons {
     display: flex;
     justify-content: space-between;
     width: 550px;
     margin-top: 30px;
-    & button{
+    & button {
       & svg {
         font-size: 16px;
         margin-right: 5px;

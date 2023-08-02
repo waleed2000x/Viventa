@@ -94,6 +94,7 @@ export default function Sidebar({ sidebar }) {
               color="secondary"
               startIcon={<LogoutRoundedIcon />}
               style={{ color: "red" }}
+              onClick={() => window.location.reload(true)}
             >
               Logout
             </Button>

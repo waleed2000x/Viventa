@@ -23,11 +23,11 @@ export default function Home({ cartProducts }) {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
-useEffect(() => {
-  setTimeout(() => {
-    showSignup(true)
-  }, 3000000);
-}, [])
+  useEffect(() => {
+    setTimeout(() => {
+      showSignup(true);
+    }, 3000);
+  }, []);
 
   return (
     <div className="home-parent">
@@ -38,9 +38,7 @@ useEffect(() => {
           cartProducts={cartProducts}
         />
         <div className="home-body">
-        {
-          signup ? <SignModal showSignup={showSignup} /> : null
-        }
+          {signup ? <SignModal showSignup={showSignup} /> : null}
           <Sidebar sidebar={sidebar} />
           <Outlet />
         </div>

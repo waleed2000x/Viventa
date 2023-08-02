@@ -2,6 +2,7 @@
 import { Button } from "@mui/material";
 import { useState } from "react";
 import DeleteTwoToneIcon from "@mui/icons-material/DeleteTwoTone";
+import { NavLink } from "react-router-dom";
 export default function ShoppingCart({ cartProducts, setCartProducts }) {
   const [prices, setPrices] = useState(
     cartProducts.map((amount) => amount.price)
@@ -54,7 +55,12 @@ export default function ShoppingCart({ cartProducts, setCartProducts }) {
         </p>
       </div>
       {cartProducts.length <= 0 ? (
-        <h1 className="shopping-cart-empty">No Items in your Cart 🫠</h1>
+        <div className="shopping-cart-empty">
+          <p>No Items in cart🫠</p>
+          <NavLink to="/clothing">
+            <Button>Shop Now</Button>
+          </NavLink>
+        </div>
       ) : (
         <div className="shopping-cart-items">
           {cartProducts.map((product) => {
@@ -106,13 +112,14 @@ export default function ShoppingCart({ cartProducts, setCartProducts }) {
           </p>
           <div className="cart-checkout-buttons">
             <Button
-              variant="contained"
+              variant="outlined"
               className="checkout"
               onClick={handleCheckout}
+              color="success"
             >
               Check Out
             </Button>
-            <Button variant="contained" color="error" onClick={handleDelete}>
+            <Button variant="outlined" color="error" onClick={handleDelete}>
               Delete All
             </Button>
           </div>
