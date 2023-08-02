@@ -9,11 +9,15 @@ import { useState } from "react";
 import About from "./components/about/About";
 import { UserContextProvider } from "./context/userContext";
 import Profile from "./components/profile/Profile";
+import { Helmet } from "react-helmet";
 function App() {
   const [cartProducts, setCartProducts] = useState([]);
 
   return (
     <UserContextProvider>
+      <Helmet>
+        <title>VIVENTA</title>
+      </Helmet>
       <Routes>
         <Route path="/" element={<Home cartProducts={cartProducts} />}>
           <Route path="/" element={<HomeContent />} />

@@ -5,6 +5,7 @@ import Sidebar from "../Sidebar/Sidebar";
 import { Outlet, useLocation } from "react-router-dom";
 import Footer from "../footer/Footer";
 import SignModal from "../signupModal/SignModal";
+import { Helmet } from "react-helmet";
 
 export default function Home({ cartProducts }) {
   const [sidebar, setSidebar] = useState(true);
@@ -31,6 +32,9 @@ export default function Home({ cartProducts }) {
 
   return (
     <div className="home-parent">
+      <Helmet>
+        <title>Home</title>
+      </Helmet>
       <div className="home-container">
         <Appbar
           sidebar={sidebar}

@@ -62,10 +62,10 @@ export default function Appbar({ sidebar, setSidebar, cartProducts }) {
             </IconButton>
           </NavLink>
         </Badge>
-        <IconButton color="secondary">
+        <Button variant="text" size="large" color="secondary">
           {/* <FavoriteRoundedIcon /> */}
           <p style={{ fontSize: "18px" }}>{userName[0]}</p>
-        </IconButton>
+        </Button>
       </div>
     </div>
   );

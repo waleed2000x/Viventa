@@ -4,6 +4,7 @@ import { Button, InputAdornment, TextField, Typography } from "@mui/material";
 import SendRoundedIcon from "@mui/icons-material/SendRounded";
 import { useFormik } from "formik";
 import { ContactSchema } from "./ContactSchema";
+import { Helmet } from "react-helmet";
 
 const initialContact = {
   fname: "",
@@ -38,6 +39,9 @@ export default function Contact() {
   }, []);
   return (
     <div className="contact-parent">
+      <Helmet>
+        <title>Contact</title>
+      </Helmet>
       <div className="contact-center">
         <div className="contact-form">
           <div className="contact-heading">

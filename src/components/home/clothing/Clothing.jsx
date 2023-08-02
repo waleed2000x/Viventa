@@ -2,6 +2,7 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import ProductModal from "./ProductModal";
+import { Helmet } from "react-helmet";
 
 export default function Clothing({ setCartProducts }) {
   const [modal, showModal] = useState(false);
@@ -35,6 +36,9 @@ export default function Clothing({ setCartProducts }) {
   }, []);
   return (
     <div className="clothing-parent">
+      <Helmet>
+        <title>Clothing</title>
+      </Helmet>
       <div className="clothing-title">
         <div className="clothing-title-image">
           <img

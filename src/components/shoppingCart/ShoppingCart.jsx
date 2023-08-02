@@ -3,6 +3,7 @@ import { Button } from "@mui/material";
 import { useState } from "react";
 import DeleteTwoToneIcon from "@mui/icons-material/DeleteTwoTone";
 import { NavLink } from "react-router-dom";
+import { Helmet } from "react-helmet";
 export default function ShoppingCart({ cartProducts, setCartProducts }) {
   const [prices, setPrices] = useState(
     cartProducts.map((amount) => amount.price)
@@ -49,6 +50,9 @@ export default function ShoppingCart({ cartProducts, setCartProducts }) {
       data-aos="fade-in"
       data-aos-duration="1000"
     >
+      <Helmet>
+        <title>Cart</title>
+      </Helmet>
       <div className="shopping-cart-title">
         <p>
           Where Fashion Meets <span>Convenience</span>

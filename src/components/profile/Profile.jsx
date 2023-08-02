@@ -4,6 +4,7 @@ import { UserContext } from "../../context/userContext";
 import { Button, FormHelperText, TextField } from "@mui/material";
 import { useFormik } from "formik";
 import { UserSchema } from "../signupModal/UserSchema";
+import { Helmet } from "react-helmet";
 
 export default function Profile() {
   const [updateProfile, setUpdateProfile] = useState(false);
@@ -36,6 +37,9 @@ export default function Profile() {
   // console.log("values");
   return (
     <div className="profile-parent">
+      <Helmet>
+        <title>Profile</title>
+      </Helmet>
       <div
         className="profile-title"
         data-aos="fade-down"
