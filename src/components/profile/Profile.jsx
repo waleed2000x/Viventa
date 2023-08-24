@@ -1,13 +1,16 @@
 import { useContext, useState } from "react";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 import { UserContext } from "../../context/userContext";
-import { Button, FormHelperText, TextField } from "@mui/material";
+import { Alert, Button, FormHelperText, TextField } from "@mui/material";
+import Snackbar from "@mui/material/Snackbar";
+import MuiAlert from "@mui/material/Alert";
 import { useFormik } from "formik";
 import { UserSchema } from "../signupModal/UserSchema";
 import { Helmet } from "react-helmet";
 
 export default function Profile() {
   const [updateProfile, setUpdateProfile] = useState(false);
+  const [showSnack, setShowSnack] = useState(false);
   const { user, setUser } = useContext(UserContext);
   const initialValues = {
     name: "",
@@ -30,16 +33,29 @@ export default function Profile() {
       resetForm();
     },
   });
-
+  const handleUpdate = () => {
+    setShowSnack(true);
+    setTimeout(() => {
+      setShowSnack(false);
+    }, 3000);
+    setUser(values);
+    handleSubmit;
+  };
   // console.log(user);
   // console.log("user");
   // console.log(values);
   // console.log("values");
+
   return (
     <div className="profile-parent">
       <Helmet>
         <title>Profile</title>
       </Helmet>
+      {showSnack ? (
+        <Snackbar open={showSnack} autoHideDuration={3000}>
+          <Alert severity="success">Profile Credidentials Updated</Alert>
+        </Snackbar>
+      ) : null}
       <div
         className="profile-title"
         data-aos="fade-down"
@@ -61,7 +77,6 @@ export default function Profile() {
         {updateProfile ? (
           <div className="profile-inputs-enabled">
             <label style={{ fontWeight: "600" }}>
-              {" "}
               NAME
               <TextField
                 variant="filled"
@@ -71,13 +86,13 @@ export default function Profile() {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.name}
+                autoComplete="off"
               />
               <FormHelperText style={{ color: "#fff" }}>
                 {touched.name && errors.name ? errors.name : null}
               </FormHelperText>
             </label>
             <label style={{ fontWeight: "600" }}>
-              {" "}
               EMAIL
               <TextField
                 variant="filled"
@@ -87,13 +102,13 @@ export default function Profile() {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 value={values.email}
+                autoComplete="off"
               />
               <FormHelperText style={{ color: "#fff" }}>
                 {touched.email && errors.email ? errors.email : null}
               </FormHelperText>
             </label>
             <label style={{ fontWeight: "600" }}>
-              {" "}
               CONTACT
               <TextField
                 variant="filled"
@@ -103,6 +118,7 @@ export default function Profile() {
                 onBlur={handleBlur}
                 value={values.contact}
                 label={user.contact}
+                autoComplete="off"
               />
               <FormHelperText style={{ color: "#fff" }}>
                 {touched.contact && errors.contact ? errors.contact : null}
@@ -154,10 +170,7 @@ export default function Profile() {
               variant="outlined"
               size="large"
               color="success"
-              onClick={() => {
-                setUser(values);
-                handleSubmit;
-              }}
+              onClick={handleUpdate}
             >
               Update
             </Button>

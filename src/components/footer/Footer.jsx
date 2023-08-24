@@ -30,7 +30,10 @@ export default function Footer() {
           <NavLink to="https://www.facebook.com" target="_blank">
             <img src={Facebook} alt="fb" />
           </NavLink>
-          <NavLink to="https://www.instagram.com/waleedahmed.x/" target="_blank">
+          <NavLink
+            to="https://www.instagram.com/waleedahmed.x/"
+            target="_blank"
+          >
             <img src={Instagram} />
           </NavLink>
           <NavLink to="https://www.x.com" target="_blank">
@@ -39,7 +42,10 @@ export default function Footer() {
           <NavLink to="https://github.com/waleed2000x" target="_blank">
             <img src={Github} />
           </NavLink>
-          <NavLink to="https://www.linkedin.com/in/waleedahmedx" target="_blank">
+          <NavLink
+            to="https://www.linkedin.com/in/waleedahmedx"
+            target="_blank"
+          >
             <img src={LinkedIn} />
           </NavLink>
         </div>
