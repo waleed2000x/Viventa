@@ -178,6 +178,9 @@ $grey: #b1b1b1;
       margin-top: 100px;
       .home-shelf-a-text {
         position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         .brand-name {
           position: absolute;
           top: 10px;
@@ -190,7 +193,7 @@ $grey: #b1b1b1;
         .brand-text {
           position: absolute;
           top: 150px;
-          right: -265px;
+          right: -220px;
           display: flex;
           flex-direction: column;
           & p {
@@ -218,8 +221,8 @@ $grey: #b1b1b1;
           }
         }
         & img {
-          height: 450px;
-          width: auto;
+          height: 100%;
+          width: 90%;
           border-radius: 10px;
           // margin-left: 0px;
         }
@@ -1085,3 +1088,140 @@ $grey: #b1b1b1;
   }
 }
 // -==--==--==--==--==- FOOTER END-==--==--==--==--==-
+// -==--==--==--==--==-  MEDIA QUERIES -==--==--==--==--==-
+@media screen and (max-width: 1450px) {
+  .home-content .home-center .home-shelf-a .home-shelf-a-text .brand-name {
+    font-size: 60px;
+  }
+  .home-content .home-center .home-shelf-a .home-shelf-a-text .brand-text p {
+    position: absolute;
+    right: 80px;
+    font-size: 35px;
+    width: max-content;
+  }
+  .home-content .home-center .home-shelf-a .home-shelf-a-text .brand-text span {
+    position: absolute;
+    top: 60px;
+    right: 33px;
+    width: max-content;
+    font-size: 35px;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .home-content .home-center .home-shelf-a .home-shelf-a-text .brand-name {
+    font-size: 50px;
+  }
+  .home-content .home-center .home-shelf-a .home-shelf-a-text .brand-text p {
+    position: absolute;
+    right: 130px;
+    font-size: 25px;
+    width: max-content;
+  }
+  .home-content .home-center .home-shelf-a .home-shelf-a-text .brand-text span {
+    position: absolute;
+    top: 50px;
+    right: 95px;
+    width: max-content;
+    font-size: 25px;
+  }
+}
+@media screen and (max-width: 1100px) {
+  .appbar-parent {
+    justify-content: flex-end;
+  }
+  .appbar-parent .appbar-logo {
+    width: 30%;
+  }
+  .appbar-parent .appbar-icons {
+    width: 20%;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .appbar-parent {
+    display: flex;
+    justify-content: space-between;
+  }
+  .appbar-parent .appbar-logo {
+    margin-left: 50px;
+  }
+  .appbar-parent .appbar-menu-items {
+    display: none;
+  }
+}
+@media screen and (max-width: 900px) {
+  .appbar-parent .appbar-logo a {
+    font-size: 35px;
+  }
+  .appbar-parent .appbar-logo svg {
+    font-size: 35px;
+  }
+  .home-content .home-center .home-shelf-a .home-shelf-a-text .brand-name {
+    top: 30px;
+    font-size: 30px;
+  }
+  .home-content .home-center .home-shelf-a .home-shelf-a-text .brand-text p {
+    position: absolute;
+    top: -25px;
+    right: 140px;
+    font-size: 20px;
+    width: max-content;
+  }
+  .home-content .home-center .home-shelf-a .home-shelf-a-text .brand-text span {
+    position: absolute;
+    top: 10px;
+    right: 115px;
+    width: max-content;
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 700px) {
+  .home-content .home-center .home-shelf-a .home-shelf-a-text .brand-name {
+    top: 0px;
+    font-size: 30px;
+  }
+  .home-content .home-center .home-shelf-a .home-shelf-a-text .brand-text p {
+    position: absolute;
+    top: -75px;
+    right: 160px;
+    font-size: 15px;
+    width: max-content;
+  }
+  .home-content .home-center .home-shelf-a .home-shelf-a-text .brand-text span {
+    position: absolute;
+    top: -50px;
+    right: 140px;
+    width: max-content;
+    font-size: 15px;
+  }
+  .home-content .home-center .home-shelf-a .home-shelf-a-text a button {
+    position: absolute;
+    bottom: -10px;
+    right: 0px;
+    width: 100px;
+    font-size: 10px;
+  }
+}
+@media screen and (max-width: 550px) {
+  .home-content .home-center .home-shelf-a .home-shelf-a-text img {
+    width: 100%;
+  }
+  .home-content .home-center .home-shelf-a .home-shelf-a-text .brand-name {
+    top: 0px;
+    font-size: 30px;
+  }
+  .home-content .home-center .home-shelf-a .home-shelf-a-text .brand-text p {
+    position: absolute;
+    top: -75px;
+    right: 200px;
+    font-size: 15px;
+    width: max-content;
+  }
+  .home-content .home-center .home-shelf-a .home-shelf-a-text .brand-text span {
+    position: absolute;
+    top: -50px;
+    right: 160px;
+    width: max-content;
+    font-size: 15px;
+  }
+}
