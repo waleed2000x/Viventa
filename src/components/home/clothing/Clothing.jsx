@@ -42,8 +42,8 @@ export default function Clothing({ setCartProducts }) {
             alt=""
           />
           <div className="clothing-title-text">
-            <p style={{ color: "black" }}>Fashion</p>
-            <p>Unleashed</p>
+            <p>Fashion</p>
+            <span>Unleashed</span>
           </div>
         </div>
       </div>

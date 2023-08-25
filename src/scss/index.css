@@ -256,7 +256,7 @@ body {
 .home-content .home-shelf-c p {
   position: absolute;
   top: 10px;
-  left: 150px;
+  right: 0px;
   font-size: 35px;
   font-weight: 800;
   text-transform: uppercase;
@@ -265,7 +265,7 @@ body {
 .home-content .home-shelf-c span {
   position: absolute;
   top: 50px;
-  left: 440px;
+  right: -40px;
   color: #ffd700;
   font-size: 40px;
   font-weight: 800;
@@ -289,7 +289,7 @@ body {
 }
 .home-content .home-shelf-d img {
   height: 450px;
-  width: auto;
+  width: 100%;
   border-radius: 10px;
   margin-left: 100px;
 }
@@ -305,7 +305,7 @@ body {
 .home-content .home-shelf-d span {
   position: absolute;
   top: 70px;
-  right: -165px;
+  right: 0px;
   color: #ffd700;
   font-size: 40px;
   font-weight: 800;
@@ -356,9 +356,6 @@ body {
 }
 .clothing-parent .clothing-title .clothing-title-image .clothing-title-text {
   display: flex;
-  position: absolute;
-  top: 20%;
-  right: -310px;
   width: -moz-max-content;
   width: max-content;
   opacity: 0;
@@ -370,13 +367,24 @@ body {
   }
 }
 .clothing-parent .clothing-title .clothing-title-image .clothing-title-text p {
-  margin-left: 20px;
+  position: absolute;
+  top: 50px;
+  right: 10px;
   text-transform: uppercase;
-  width: 100%;
   font-size: 50px;
   font-weight: 800;
-  color: #f3f6f9;
+  color: #000000;
   z-index: 2;
+}
+.clothing-parent .clothing-title .clothing-title-image .clothing-title-text span {
+  position: absolute;
+  top: 50px;
+  right: -310px;
+  text-transform: uppercase;
+  font-size: 50px;
+  font-weight: 800;
+  margin-left: 20px;
+  color: white;
 }
 .clothing-parent .clothing-products {
   display: flex;
@@ -388,15 +396,15 @@ body {
   width: 100%;
   margin-top: 200px;
   background-image: url("https://images.unsplash.com/photo-1595065666634-4725aa7e8379?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NzZ8fG1vZGVsJTIwYmxhY2t8ZW58MHwwfDB8fHww&auto=format&fit=crop&w=900&q=60");
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-position: center center;
   min-height: 500px;
 }
 .clothing-parent .products-title p {
   font-size: 35px;
   font-weight: 600;
   text-transform: uppercase;
-  margin-top: 50px;
   text-align: center;
   color: #f3f6f9;
   z-index: 12;
@@ -489,8 +497,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 600px;
-  width: 40%;
+  width: 60%;
   border: 0.5px solid #ffd700;
   background-color: #000000;
   border-radius: 5px;
@@ -1091,6 +1098,13 @@ body {
     width: max-content;
     font-size: 35px;
   }
+  .clothing-parent .clothing-title .clothing-title-image .clothing-title-text p {
+    font-size: 38px;
+  }
+  .clothing-parent .clothing-title .clothing-title-image .clothing-title-text span {
+    font-size: 38px;
+    right: -230px;
+  }
 }
 @media screen and (max-width: 1200px) {
   .home-content .home-center .home-shelf-a .home-shelf-a-text .brand-name {
@@ -1111,6 +1125,43 @@ body {
     width: max-content;
     font-size: 25px;
   }
+  .home-content .home-center .home-shelf-b img {
+    width: 100%;
+    margin-left: 0px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .home-content .home-center .home-shelf-d img {
+    width: 100%;
+    margin-left: 0px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .home-content .home-center .home-shelf-b p {
+    font-size: 35px;
+  }
+  .home-content .home-center .home-shelf-b span {
+    font-size: 35px;
+  }
+  .home-content .home-center .home-shelf-c img {
+    width: 100%;
+    margin-left: 0px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .home-content .home-center .home-shelf-c p {
+    font-size: 35px;
+  }
+  .home-content .home-center .home-shelf-c span {
+    font-size: 35px;
+  }
+  .clothing-parent .clothing-title .clothing-title-image .clothing-title-text p {
+    font-size: 35px;
+  }
+  .clothing-parent .clothing-title .clothing-title-image .clothing-title-text span {
+    font-size: 35px;
+    right: -210px;
+  }
 }
 @media screen and (max-width: 1100px) {
   .appbar-parent {
@@ -1121,6 +1172,13 @@ body {
   }
   .appbar-parent .appbar-icons {
     width: 20%;
+  }
+  .clothing-parent .clothing-title .clothing-title-image .clothing-title-text p {
+    font-size: 30px;
+  }
+  .clothing-parent .clothing-title .clothing-title-image .clothing-title-text span {
+    font-size: 30px;
+    right: -180px;
   }
 }
 @media screen and (max-width: 1000px) {
@@ -1133,6 +1191,28 @@ body {
   }
   .appbar-parent .appbar-menu-items {
     display: none;
+  }
+  .clothing-parent .clothing-title .clothing-title-image .clothing-title-text p {
+    font-size: 30px;
+  }
+  .clothing-parent .clothing-title .clothing-title-image .clothing-title-text span {
+    font-size: 30px;
+    right: -180px;
+  }
+  .clothing-parent .products-title p {
+    font-size: 30px;
+  }
+  .clothing-parent .products-title span {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 950px) {
+  .clothing-parent .clothing-title .clothing-title-image .clothing-title-text p {
+    font-size: 25px;
+  }
+  .clothing-parent .clothing-title .clothing-title-image .clothing-title-text span {
+    font-size: 25px;
+    right: -150px;
   }
 }
 @media screen and (max-width: 900px) {
@@ -1161,6 +1241,27 @@ body {
     width: -moz-max-content;
     width: max-content;
     font-size: 20px;
+  }
+  .home-content .home-center .home-shelf-b p {
+    font-size: 30px;
+  }
+  .home-content .home-center .home-shelf-b span {
+    font-size: 30px;
+  }
+  .home-content .home-center .home-shelf-c p {
+    font-size: 30px;
+  }
+  .home-content .home-center .home-shelf-c span {
+    font-size: 30px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .clothing-parent .clothing-title .clothing-title-image .clothing-title-text p {
+    font-size: 20px;
+  }
+  .clothing-parent .clothing-title .clothing-title-image .clothing-title-text span {
+    font-size: 20px;
+    right: -120px;
   }
 }
 @media screen and (max-width: 700px) {
@@ -1191,6 +1292,25 @@ body {
     width: 100px;
     font-size: 10px;
   }
+  .home-content .home-center .home-shelf-b p {
+    right: 80px;
+  }
+  .home-content .home-center .home-shelf-b span {
+    left: 100px;
+  }
+  .clothing-parent .clothing-title .clothing-title-image .clothing-title-text p {
+    font-size: 15px;
+  }
+  .clothing-parent .clothing-title .clothing-title-image .clothing-title-text span {
+    font-size: 15px;
+    right: -100px;
+  }
+  .clothing-parent .products-title p {
+    font-size: 25px;
+  }
+  .clothing-parent .products-title span {
+    font-size: 25px;
+  }
 }
 @media screen and (max-width: 550px) {
   .home-content .home-center .home-shelf-a .home-shelf-a-text img {
@@ -1215,5 +1335,65 @@ body {
     width: -moz-max-content;
     width: max-content;
     font-size: 15px;
+  }
+  .home-content .home-center .home-shelf-b p {
+    top: 40px;
+    font-size: 20px;
+  }
+  .home-content .home-center .home-shelf-b span {
+    font-size: 20px;
+  }
+  .home-content .home-center .home-shelf-b h4 {
+    font-size: 25px;
+  }
+  .home-content .home-center .home-shelf-c p {
+    font-size: 25px;
+  }
+  .home-content .home-center .home-shelf-c span {
+    font-size: 25px;
+  }
+  .home-content .home-center .home-shelf-c h4 {
+    font-size: 25px;
+  }
+  .home-content .home-center .home-shelf-d p {
+    font-size: 25px;
+  }
+  .home-content .home-center .home-shelf-d span {
+    font-size: 25px;
+  }
+  .home-content .home-center .home-shelf-d h4 {
+    font-size: 25px;
+  }
+  .clothing-parent .clothing-title .clothing-title-image .clothing-title-text p {
+    font-size: 15px;
+    color: #f3f6f9;
+    top: -25px;
+    right: 50px;
+  }
+  .clothing-parent .clothing-title .clothing-title-image .clothing-title-text span {
+    font-size: 15px;
+    top: 0px;
+    right: 10px;
+    color: #000000;
+  }
+  .clothing-parent .products-title p {
+    font-size: 20px;
+  }
+  .clothing-parent .products-title span {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .home-content .home-center .home-shelf-c p {
+    font-size: 20px;
+  }
+  .home-content .home-center .home-shelf-c span {
+    font-size: 20px;
+  }
+  .home-content .home-center .home-shelf-d p {
+    font-size: 20px;
+  }
+  .home-content .home-center .home-shelf-d span {
+    font-size: 20px;
   }
 }/*# sourceMappingURL=index.css.map */
