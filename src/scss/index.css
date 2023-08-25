@@ -186,7 +186,6 @@ body {
   text-decoration: none;
   color: #000000;
   background-color: #ffd700;
-  border: 2px solid #000000;
   border-radius: 4px;
   transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
   cursor: pointer;
@@ -206,7 +205,7 @@ body {
   display: flex;
   justify-content: center;
   width: 70%;
-  margin-top: 150px;
+  margin-top: 200px;
 }
 .home-content .home-center .home-shelf-b img {
   height: 450px;
@@ -498,6 +497,7 @@ body {
   flex-direction: column;
   align-items: center;
   width: 60%;
+  height: auto;
   border: 0.5px solid #ffd700;
   background-color: #000000;
   border-radius: 5px;
@@ -722,7 +722,6 @@ body {
   text-decoration: none;
   color: #000000;
   background-color: #ffd700;
-  border: 2px solid #000000;
   border-radius: 4px;
   transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
   cursor: pointer;
@@ -765,16 +764,17 @@ body {
 }
 .shopping-cart-parent .shopping-cart-empty {
   display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   min-height: 30vh;
 }
 .shopping-cart-parent .shopping-cart-empty p {
   font-size: 18px;
   font-weight: 500;
-  color: #ff6600;
-  margin-right: 20px;
+  color: #b1b1b1;
 }
 .shopping-cart-parent .shopping-cart-empty button {
   display: inline-block;
@@ -785,7 +785,6 @@ body {
   text-decoration: none;
   color: #000000;
   background-color: #ffd700;
-  border: 2px solid #000000;
   border-radius: 4px;
   transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
   cursor: pointer;
@@ -805,14 +804,10 @@ body {
   display: flex;
   width: 100%;
   justify-content: center;
-  color: #ffd700;
+  color: #f3f6f9;
   text-transform: uppercase;
   font-size: 40px;
   font-weight: 600;
-}
-.shopping-cart-parent .shopping-cart-title p span {
-  color: rgb(0, 218, 0);
-  margin-left: 5px;
 }
 .shopping-cart-parent .shopping-cart-items {
   display: flex;
@@ -894,7 +889,7 @@ body {
   width: 95%;
   height: 150px;
   margin: 100px 0px;
-  border-top: 1px solid #ffd700;
+  border-top: 1px solid #f3f6f9;
 }
 .shopping-cart-parent .cart-checkout-parent .cart-checkout p {
   margin: 10px 0px;
@@ -1253,6 +1248,9 @@ body {
   }
   .home-content .home-center .home-shelf-c span {
     font-size: 30px;
+  }
+  .product-modal-parent .modal {
+    width: 80%;
   }
 }
 @media screen and (max-width: 800px) {

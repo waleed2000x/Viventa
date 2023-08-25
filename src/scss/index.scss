@@ -36,7 +36,6 @@ $grey: #b1b1b1;
   text-decoration: none;
   color: $jetBlack;
   background-color: $yellow;
-  border: 2px solid #000000;
   border-radius: 4px;
   transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease;
   cursor: pointer;
@@ -233,7 +232,7 @@ $grey: #b1b1b1;
       display: flex;
       justify-content: center;
       width: 70%;
-      margin-top: 150px;
+      margin-top: 200px;
       & img {
         height: 450px;
         width: auto;
@@ -533,6 +532,7 @@ $grey: #b1b1b1;
     flex-direction: column;
     align-items: center;
     width: 60%;
+    height: auto;
     border: 0.5px solid $yellow;
     background-color: $jetBlack;
     border-radius: 5px;
@@ -794,15 +794,16 @@ $grey: #b1b1b1;
   min-height: 85vh;
   .shopping-cart-empty {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     min-height: 30vh;
     & p {
       font-size: 18px;
       font-weight: 500;
-      color: $orange;
-      margin-right: 20px;
+      color: $grey;
     }
     & button {
       @include blackYellowButton;
@@ -818,15 +819,10 @@ $grey: #b1b1b1;
     display: flex;
     width: 100%;
     justify-content: center;
-    color: $yellow;
+    color: $white;
     text-transform: uppercase;
     font-size: 40px;
     font-weight: 600;
-
-    & span {
-      color: $green;
-      margin-left: 5px;
-    }
   }
   .shopping-cart-items {
     display: flex;
@@ -905,7 +901,7 @@ $grey: #b1b1b1;
       width: 95%;
       height: 150px;
       margin: 100px 0px;
-      border-top: 1px solid $yellow;
+      border-top: 1px solid $white;
       & p {
         margin: 10px 0px;
         font-size: 30px;
@@ -1303,6 +1299,9 @@ $grey: #b1b1b1;
   }
   .home-content .home-center .home-shelf-c span {
     font-size: 30px;
+  }
+  .product-modal-parent .modal {
+    width: 80%;
   }
 }
 @media screen and (max-width: 800px) {
