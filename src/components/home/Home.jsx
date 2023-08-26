@@ -27,7 +27,7 @@ export default function Home({ cartProducts }) {
   useEffect(() => {
     setTimeout(() => {
       showSignup(true);
-    }, 3000);
+    }, 300000);
   }, []);
 
   return (

@@ -44,16 +44,18 @@ export default function ProductModal({
               {modalProduct.category}
             </span>
           </h3>
-          <h4 data-aos="zoom-in" data-aos-duration="2000">
-            Price: ${modalProduct.price}
-          </h4>
-          <IconButton
-            onClick={() =>
-              setCartProducts((prevVal) => [...prevVal, modalProduct])
-            }
-          >
-            <AddShoppingCartOutlinedIcon />
-          </IconButton>
+          <div className="cart-price">
+            <h4 data-aos="zoom-in" data-aos-duration="2000">
+              Price: ${modalProduct.price}
+            </h4>
+            <IconButton
+              onClick={() =>
+                setCartProducts((prevVal) => [...prevVal, modalProduct])
+              }
+            >
+              <AddShoppingCartOutlinedIcon />
+            </IconButton>
+          </div>
         </div>
       </div>
     </div>

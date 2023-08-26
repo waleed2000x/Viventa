@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import ProductModal from "./ProductModal";
 import { Helmet } from "react-helmet";
+import axios from "axios";
 
 export default function Clothing({ setCartProducts }) {
   const [modal, showModal] = useState(false);
@@ -22,17 +23,12 @@ export default function Clothing({ setCartProducts }) {
   }, [modal]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("https://fakestoreapi.com/products");
-        const json = await response.json();
-        setProducts(json);
-      } catch (error) {
-        console.error(error);
-      }
-    };
-
-    fetchData();
+    axios
+      .get("https://fakestoreapi.com/products")
+      .then((res) => setProducts(res.data))
+      .catch((error) => {
+        console.error("Error fetching data:", error);
+      });
   }, []);
   return (
     <div className="clothing-parent">
@@ -46,8 +42,8 @@ export default function Clothing({ setCartProducts }) {
             alt=""
           />
           <div className="clothing-title-text">
-            <p style={{ color: "black" }}>Fashion</p>
-            <p> Unleashed</p>
+            <p>Fashion</p>
+            <span>Unleashed</span>
           </div>
         </div>
       </div>

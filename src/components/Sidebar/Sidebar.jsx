@@ -31,7 +31,7 @@ const Container = styled.div`
   position: fixed;
   display: ${({ show }) => (show === "show" ? "flex" : "none")};
   width: 20vw;
-  height: 50vh;
+  height: 60vh;
   margin-top: 120px;
   opacity: ${({ show }) => (show === "show" ? 1 : 0)};
   animation: ${({ show }) => (show === "show" ? fadeIn : "none")} 1s ease;
@@ -68,7 +68,7 @@ const Buttons = styled.div`
 `;
 
 export default function Sidebar({ sidebar }) {
-  const toggleSidebar = sidebar ? "show" : "hide";
+  const toggleSidebar = sidebar ? "hide" : "show";
 
   return (
     <Parent>
@@ -82,6 +82,11 @@ export default function Sidebar({ sidebar }) {
           <Buttons>
             <Button>
               <NavLink to="/clothing">Shop</NavLink>
+            </Button>
+          </Buttons>
+          <Buttons>
+            <Button>
+              <NavLink to="/about">About</NavLink>
             </Button>
           </Buttons>
           <Buttons>

@@ -54,13 +54,11 @@ export default function ShoppingCart({ cartProducts, setCartProducts }) {
         <title>Cart</title>
       </Helmet>
       <div className="shopping-cart-title">
-        <p>
-          Where Fashion Meets <span>Convenience</span>
-        </p>
+        <p>Where Fashion Meets Convenience</p>
       </div>
       {cartProducts.length <= 0 ? (
         <div className="shopping-cart-empty">
-          <p>No Items in cart🫠</p>
+          <p>No Items in cart</p>
           <NavLink to="/clothing">
             <Button>Shop Now</Button>
           </NavLink>
