@@ -597,17 +597,19 @@ $grey: #b1b1b1;
       left: 10px;
       color: $white;
       font-size: 14px;
-      max-width: 50%;
+      width: 100%;
       text-transform: uppercase;
       & span {
         margin-left: 5px;
         text-decoration: underline;
       }
     }
+  }
+  .cart-price {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
     & h4 {
-      position: absolute;
-      bottom: 10px;
-      right: 15px;
       color: $white;
       font-size: 20px;
       max-width: 50%;
@@ -617,9 +619,6 @@ $grey: #b1b1b1;
       color: $green;
     }
     & button {
-      position: absolute;
-      left: 10px;
-      bottom: 5px;
       width: 70px;
       height: 50px;
       border-radius: 10px;
@@ -1450,6 +1449,35 @@ $grey: #b1b1b1;
   }
   .clothing-parent .products-title span {
     font-size: 20px;
+  }
+  .product-modal-parent .modal-image {
+    top: 60px;
+    width: 200px;
+    height: 200px;
+  }
+  .product-modal-parent .modal-image img {
+    width: 200px;
+    height: 200px;
+  }
+  .product-modal-parent .modal-details h1 {
+    font-size: 15px;
+  }
+  .product-modal-parent .modal-details h2 {
+    font-size: 10px;
+    height: 60px;
+  }
+  .product-modal-parent .cart-price {
+    padding: 10px 0px;
+  }
+  .product-modal-parent .cart-price button {
+    width: 30px;
+    height: 30px;
+    & svg {
+      font-size: 30px;
+    }
+  }
+  .product-modal-parent .cart-price h4 {
+    font-size: 15px;
   }
 }
 
