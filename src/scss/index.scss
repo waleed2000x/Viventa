@@ -1319,6 +1319,16 @@ $grey: #b1b1b1;
     font-size: 20px;
     right: -120px;
   }
+  .contact-parent {
+    min-height: 80vh;
+  }
+  .contact-parent .contact-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+  }
 }
 @media screen and (max-width: 700px) {
   .home-content .home-center .home-shelf-a .home-shelf-a-text .brand-name {
@@ -1478,6 +1488,17 @@ $grey: #b1b1b1;
   }
   .product-modal-parent .cart-price h4 {
     font-size: 15px;
+  }
+  .input-row {
+    display: flex;
+    flex-direction: column;
+    .css-1u3bzj6-MuiFormControl-root-MuiTextField-root {
+      width: 100% !important;
+      margin-top: 20px;
+    }
+    .css-wb57ya-MuiFormControl-root-MuiTextField-root {
+      width: 100% !important;
+    }
   }
 }
 
