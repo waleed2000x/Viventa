@@ -50,7 +50,9 @@ const Buttons = styled.div`
   justify-content: center;
   align-items: center;
   margin: 10px 0px;
+  overflow: hidden;
   button {
+    overflow: hidden;
     width: 100%;
     color: #ffffff;
     height: 80px;

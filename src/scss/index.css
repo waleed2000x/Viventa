@@ -6,7 +6,6 @@
   font-family: "Poppins", sans-serif;
   margin: 0px;
   padding: 0px;
-  overflow-x: hidden;
 }
 * .no-scroll {
   overflow: hidden;
@@ -702,6 +701,7 @@ body {
   align-items: center;
   width: 80vw;
   min-height: 100vh;
+  overflow: hidden;
 }
 .about-parent .about-viventa-title {
   display: flex;

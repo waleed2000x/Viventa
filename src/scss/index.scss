@@ -9,7 +9,7 @@
   .no-scroll {
     overflow: hidden;
   }
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
 body {
   position: relative;
@@ -750,6 +750,7 @@ $grey: #b1b1b1;
   align-items: center;
   width: 80vw;
   min-height: 100vh;
+  overflow: hidden;
   .about-viventa-title {
     display: flex;
     flex-direction: column;
