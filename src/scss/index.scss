@@ -9,6 +9,7 @@
   .no-scroll {
     overflow: hidden;
   }
+  overflow-x: hidden;
 }
 body {
   position: relative;
@@ -728,24 +729,24 @@ $grey: #b1b1b1;
     width: 90%;
     margin-top: 20px;
     & img {
-      position: relative;
-      width: 700px;
-      height: 500px;
+      // position: relative;
+      width: 100%;
       object-fit: contain;
+      background-position: center center;
       opacity: 0.5;
       border-radius: 10px;
     }
     & h1 {
       position: absolute;
       top: 30px;
-      left: 280px;
+      left: 250px;
       color: $white;
       font-size: 70px;
     }
     & p {
       position: absolute;
       top: 130px;
-      left: 300px;
+      left: 250px;
       color: $yellow;
       font-size: 40px;
       font-weight: 600;
@@ -1184,6 +1185,12 @@ $grey: #b1b1b1;
     font-size: 35px;
     right: -210px;
   }
+  .about-parent .about-viventa-title h1 {
+    font-size: 50px;
+  }
+  .about-parent .about-viventa-title p {
+    font-size: 30px;
+  }
 }
 @media screen and (max-width: 1100px) {
   .appbar-parent {
@@ -1243,6 +1250,14 @@ $grey: #b1b1b1;
   }
   .clothing-parent .products-title span {
     font-size: 30px;
+  }
+  .about-parent .about-viventa-title h1 {
+    font-size: 40px;
+    left: 100px;
+  }
+  .about-parent .about-viventa-title p {
+    font-size: 25px;
+    left: 130px;
   }
 }
 @media screen and (max-width: 950px) {
@@ -1329,6 +1344,16 @@ $grey: #b1b1b1;
     transform: translate(-50%, -50%);
     width: 100%;
   }
+  .about-parent .about-viventa-title h1 {
+    font-size: 30px;
+    left: 80px;
+    top: 5px;
+  }
+  .about-parent .about-viventa-title p {
+    font-size: 20px;
+    top: 50px;
+    left: 110px;
+  }
 }
 @media screen and (max-width: 700px) {
   .home-content .home-center .home-shelf-a .home-shelf-a-text .brand-name {
@@ -1382,6 +1407,22 @@ $grey: #b1b1b1;
   }
   .clothing-parent .products-title span {
     font-size: 25px;
+  }
+  .about-parent .about-viventa-title h1 {
+    font-size: 30px;
+    left: 80px;
+    top: 5px;
+  }
+  .about-parent .about-viventa-title p {
+    font-size: 20px;
+    top: 50px;
+    left: 90px;
+  }
+  .about-parent .about-viventa h1 {
+    font-size: 25px;
+  }
+  .about-parent .about-viventa p {
+    font-size: 10px;
   }
 }
 @media screen and (max-width: 550px) {
@@ -1500,6 +1541,27 @@ $grey: #b1b1b1;
       width: 100% !important;
     }
   }
+  .about-parent .about-viventa-title h1 {
+    font-size: 25px;
+    left: 60px;
+    top: 5px;
+  }
+  .about-parent .about-viventa-title p {
+    font-size: 13px;
+    top: 50px;
+    left: 70px;
+  }
+  .about-parent .about-viventa-title a button {
+    width: 120px;
+    height: 40px;
+    font-size: 14px;
+  }
+  .about-parent .about-viventa h1 {
+    font-size: 20px;
+  }
+  .about-parent .about-viventa p {
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -1514,5 +1576,22 @@ $grey: #b1b1b1;
   }
   .home-content .home-center .home-shelf-d span {
     font-size: 20px;
+  }
+  .about-parent .about-viventa-title h1 {
+    font-size: 25px;
+    left: 30px;
+    top: 5px;
+  }
+  .about-parent .about-viventa-title p {
+    font-size: 13px;
+    top: 50px;
+    left: 50px;
+  }
+  .about-parent .about-viventa-title a button {
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 20px;
+    font-size: 10px;
   }
 }
