@@ -321,6 +321,32 @@ body {
   text-transform: uppercase;
 }
 
+.small-parent {
+  position: absolute;
+  top: 120px;
+  width: 95%;
+  z-index: 6;
+  background-color: #000000;
+  border: 1px solid #f3f6f9;
+  border-radius: 5px;
+}
+.small-parent .buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.small-parent .buttons button {
+  border-top: 0.5px solid #f3f6f9;
+  width: 90%;
+  padding: 10px 0px;
+  border-radius: 0px;
+}
+.small-parent .buttons button a {
+  text-decoration: none;
+  color: #f3f6f9;
+}
+
 .clothing-parent {
   display: flex;
   flex-direction: column;
@@ -1534,5 +1560,8 @@ body {
   .appbar-parent .appbar-logo {
     width: 60%;
     margin-left: 0px;
+  }
+  .appbar-parent .appbar-logo a {
+    font: 28px;
   }
 }/*# sourceMappingURL=index.css.map */

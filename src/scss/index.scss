@@ -14,6 +14,7 @@
 body {
   position: relative;
 }
+$appbarHeight: 120px;
 // Colors
 $white: #f3f6f9;
 $lightBlack: #212121;
@@ -351,6 +352,33 @@ $grey: #b1b1b1;
 }
 
 // -==--==--==--==--==- HOME END-==--==--==--==--==-
+// -==--==--==--==--==- SMALL SCREEN SIDEBAR START-==--==--==--==--==-
+.small-parent {
+  position: absolute;
+  top: $appbarHeight;
+  width: 95%;
+  z-index: 6;
+  background-color: $jetBlack;
+  border: 1px solid $white;
+  border-radius: 5px;
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & button {
+      border-top: 0.5px solid $white;
+      width: 90%;
+      padding: 10px 0px;
+      border-radius: 0px;
+      & a {
+        text-decoration: none;
+        color: $white;
+      }
+    }
+  }
+}
+// -==--==--==--==--==- SMALL SCREEN SIDEBAR END-==--==--==--==--==-
 // -==--==--==--==--==- CLOTHING START-==--==--==--==--==-
 .clothing-parent {
   display: flex;
@@ -1607,5 +1635,8 @@ $grey: #b1b1b1;
   .appbar-parent .appbar-logo {
     width: 60%;
     margin-left: 0px;
+  }
+  .appbar-parent .appbar-logo a {
+    font: 28px;
   }
 }
