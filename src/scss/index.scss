@@ -1344,6 +1344,12 @@ $grey: #b1b1b1;
     transform: translate(-50%, -50%);
     width: 100%;
   }
+  .appbar-parent .appbar-logo {
+    width: 40%;
+  }
+  .appbar-parent .appbar-icons {
+    width: 40%;
+  }
   .about-parent .about-viventa-title h1 {
     font-size: 30px;
     left: 80px;
@@ -1562,6 +1568,10 @@ $grey: #b1b1b1;
   .about-parent .about-viventa p {
     width: 100%;
   }
+  .appbar-parent .appbar-logo {
+    width: 50%;
+    margin-left: 20px;
+  }
 }
 
 @media screen and (max-width: 450px) {
@@ -1593,5 +1603,9 @@ $grey: #b1b1b1;
     width: 100px;
     height: 20px;
     font-size: 10px;
+  }
+  .appbar-parent .appbar-logo {
+    width: 60%;
+    margin-left: 0px;
   }
 }
