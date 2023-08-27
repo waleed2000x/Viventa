@@ -9,7 +9,7 @@ import SmallScreen from "../Sidebar/SmallScreen";
 
 // eslint-disable-next-line react/prop-types
 export default function Home({ cartProducts }) {
-  const [sidebar, setSidebar] = useState(true);
+  const [sidebar, setSidebar] = useState(false);
   const [showSidebar, setShowSidebar] = useState(true); // State to control which component to show
   const [signup, showSignup] = useState(null);
   const location = useLocation();
