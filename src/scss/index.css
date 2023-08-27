@@ -321,7 +321,7 @@ body {
 }
 
 .small-parent {
-  position: absolute;
+  position: fixed;
   top: 120px;
   width: 95%;
   z-index: 6;
@@ -338,12 +338,14 @@ body {
 .small-parent .buttons button {
   border-top: 0.5px solid #f3f6f9;
   width: 90%;
-  padding: 10px 0px;
   border-radius: 0px;
 }
 .small-parent .buttons button a {
   text-decoration: none;
+  padding: 10px 0px;
   color: #f3f6f9;
+  width: 100%;
+  height: 100%;
 }
 
 .clothing-parent {
@@ -1208,6 +1210,11 @@ body {
   }
 }
 @media screen and (max-width: 1000px) {
+  .home-parent .home-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .appbar-parent {
     display: flex;
     justify-content: space-between;
