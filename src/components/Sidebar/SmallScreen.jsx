@@ -2,6 +2,7 @@ import { Button } from "@mui/material";
 import { NavLink } from "react-router-dom";
 import LogoutRoundedIcon from "@mui/icons-material/LogoutRounded";
 
+// eslint-disable-next-line react/prop-types
 export default function SmallScreen({ sidebar, setSidebar }) {
   const hideSidebar = () => {
     if (sidebar) {
