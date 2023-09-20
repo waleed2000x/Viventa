@@ -1,6 +1,6 @@
-# React + Vite
+# Viventa
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The web app is for a clothing brand named Viventa
 
 Currently, two official plugins are available:
 
